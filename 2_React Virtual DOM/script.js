@@ -1,4 +1,4 @@
-// console.log('React Virtual DOM');
+/* // console.log('React Virtual DOM');
 
 let array = [];
 increment = 0;
@@ -17,3 +17,4 @@ container.innerHTML = array.join(' ')
     increment++;
     container.innerHTML += ' ' + increment;
 } */
+

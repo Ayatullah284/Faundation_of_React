@@ -1,16 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Fruits App</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
-<body> 
+<body>
 
-    <div class="container"></div>
-    
+<div id="root"></div>
 
+<script type="text/babel">
+    const Fruits = () => {
+        const [fruit, setFruit] = React.useState('');
+        const [fruits, setFruits] = React.useState(['mango', 'guava', 'apple', 'orange']);
 
-    <script src="script.js"></script>
+        return (
+            <div className="container">
+                <ul>
+                    {[...fruits].sort().map(item => (
+                        <li key={item}>{item}</li>
+                    ))}
+                </ul>
+
+                <input
+                    type="text"
+                    value={fruit}
+                    onChange={e => setFruit(e.target.value)}
+                />
+
+                <button onClick={() => {
+                    if (!fruit.trim()) return;
+                    setFruits([...fruits, fruit]);
+                    setFruit('');
+                }}>
+                    Add Item
+                </button>
+            </div>
+        );
+    };
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<Fruits />);
+</script>
+
 </body>
 </html>
