@@ -21,4 +21,5 @@ const addItem = function(){
     fruits.myPush(document.getElementById('input').value);
 }
 
+
 init();
