@@ -1,1 +1,19 @@
-console.log('React Virtual DOM');
+// console.log('React Virtual DOM');
+
+let array = [];
+increment = 0;
+let container = document.querySelector('.container');
+
+// fast 
+while(increment < 10000){
+    array.push(++increment);
+}
+
+container.innerHTML = array.join(' ')
+
+
+// slow 
+/* while(increment < 100){
+    increment++;
+    container.innerHTML += ' ' + increment;
+} */
